@@ -102,9 +102,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shop\Shop.csproj">
+    <ProjectReference Include="..\Shop\ShopWebApi.csproj">
       <Project>{08C514EF-5C00-48C0-B365-9DB1D92FDFDA}</Project>
-      <Name>Shop</Name>
+      <Name>ShopWebApi</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

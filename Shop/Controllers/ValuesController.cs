@@ -1,6 +1,6 @@
-﻿using Shop.Repository;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Web.Http;
+using Shop.Repository;
 
 namespace Shop.Controllers
 {

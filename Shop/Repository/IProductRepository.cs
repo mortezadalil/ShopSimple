@@ -1,8 +1,8 @@
 ﻿#region using
 
-using Shop.Models;
 using System;
 using System.Collections.Generic;
+using Shop.Models;
 
 #endregion
 

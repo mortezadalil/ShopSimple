@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Shop.Controllers;
+using ShopWebApi.Controllers;
 
 namespace Shop.Tests.Controllers
 {

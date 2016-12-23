@@ -1,11 +1,11 @@
 ﻿#region using
 
-using Shop.Models;
-using Shop.Repository;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using Shop.Models;
+using Shop.Repository;
 
 #endregion
 

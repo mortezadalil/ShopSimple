@@ -1,5 +1,4 @@
-﻿using Shop.Repository;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Shop.Controllers
 {
@@ -14,7 +13,7 @@ namespace Shop.Controllers
 
         public ActionResult Index()
         {
-          //  var d=_unitOfWork.ProductRepository.GetTopProductsByCost(1);
+            //  var d=_unitOfWork.ProductRepository.GetTopProductsByCost(1);
             ViewBag.Title = "Home Page";
 
             return View();

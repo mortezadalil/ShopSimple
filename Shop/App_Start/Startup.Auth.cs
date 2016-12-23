@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Shop.Models;
 using Shop.Providers;
-using System;
 
 namespace Shop
 {

@@ -1,7 +1,7 @@
+using System.Web.Http;
 using Microsoft.Practices.Unity;
 using Shop.Repository;
 using Shop.Services;
-using System.Web.Http;
 using Unity.WebApi;
 
 namespace Shop

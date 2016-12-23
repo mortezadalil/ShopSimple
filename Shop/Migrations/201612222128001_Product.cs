@@ -1,7 +1,7 @@
+using System.Data.Entity.Migrations;
+
 namespace Shop.Migrations
 {
-    using System.Data.Entity.Migrations;
-
     public partial class Product : DbMigration
     {
         public override void Up()

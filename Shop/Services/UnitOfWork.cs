@@ -1,10 +1,10 @@
 ﻿#region using
 
-using Shop.Models;
-using Shop.Repository;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Shop.Models;
+using Shop.Repository;
 
 #endregion
 

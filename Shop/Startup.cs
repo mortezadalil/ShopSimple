@@ -1,7 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
+using Shop;
 
-[assembly: OwinStartup(typeof(Shop.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
 namespace Shop
 {
