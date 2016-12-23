@@ -1,11 +1,11 @@
-﻿using System;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using Shop.Providers;
 using Shop.Models;
+using Shop.Providers;
+using System;
 
 namespace Shop
 {
@@ -15,7 +15,7 @@ namespace Shop
 
         public static string PublicClientId { get; private set; }
 
-        // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
+        // For more information on configuring custom authentication, please visit https://github.com/eashi/Samples/tree/master/OAuthSample/OAuthSample
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context and user manager to use a single instance per request
@@ -33,6 +33,7 @@ namespace Shop
             {
                 //https://www.youtube.com/watch?v=dk0PwKO4MP0
                 TokenEndpointPath = new PathString("/Token"),
+
                 Provider = new ApplicationOAuthProvider(PublicClientId),
                 //AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(365),

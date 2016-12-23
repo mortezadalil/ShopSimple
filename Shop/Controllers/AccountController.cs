@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Http;
-using Microsoft.AspNet.Identity;
+﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -17,6 +7,15 @@ using Microsoft.Owin.Security.OAuth;
 using Shop.Models;
 using Shop.Providers;
 using Shop.Results;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Threading.Tasks;
+using System.Web;
+using System.Web.Http;
 
 namespace Shop.Controllers
 {
@@ -323,35 +322,52 @@ namespace Shop.Controllers
         }
 
         // POST api/Account/Register
+
+        [Route("Register/{mobile}")]
         [AllowAnonymous]
         [Route("Register")]
-        public async Task<IHttpActionResult> Register(RegisterBindingModel model)
+        public async Task<IHttpActionResult> Register(string mobile)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var user = _context.Users.FirstOrDefault(x => x.Mobile == model.Mobile);
+            var user = _context.Users.FirstOrDefault(x => x.Mobile == mobile);
 
             if (user == null)
             {
-                var username = Guid.NewGuid().ToString().Replace('-', '0').Substring(0, 10);
+                //var username = Guid.NewGuid().ToString().Replace('-', '0').Substring(0, 10);
+                var random = new Random();
+                //var verificationCode = random.Next(10000, 99999).ToString();
+                var verificationCode = "11111";
+
                 user = new ApplicationUser()
                 {
-                    UserName = username,
-                    Mobile = model.Mobile
+                    UserName = mobile,
+                    Mobile = mobile,
+                    VerificationCode = verificationCode
                 };
 
-                var result = await UserManager.CreateAsync(user,user.Id);
+
+
+                //CreateAsync(string username, string password)
+                var result = await UserManager.CreateAsync(user, verificationCode);
                 if (!result.Succeeded)
                 {
                     return GetErrorResult(result);
                 }
+                else
+                {
+                    //send sms
+                }
+
             }
 
+            return Ok();
 
-            using (var client = new HttpClient())
+
+            /*using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://" + Request.RequestUri.Authority);
                 client.DefaultRequestHeaders.Accept.Clear();
@@ -371,9 +387,9 @@ namespace Shop.Controllers
                     var responseStream = await response.Content.ReadAsStringAsync();
                     return Ok(responseStream);
                 }
-            }
+            }*/
 
-            return BadRequest();
+
         }
 
         // POST api/Account/RegisterExternal
