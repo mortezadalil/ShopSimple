@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Shop.Repository;
+using System.Collections.Generic;
 using System.Web.Http;
-using Shop.Repository;
 
-namespace Shop.Controllers
+namespace Shop.Controllers.api
 {
     public class ValuesController : ApiController
     {
@@ -13,6 +13,7 @@ namespace Shop.Controllers
             _unitOfWork = unitOfWork;
         }
         // GET api/values // Authorization : bearer access_token
+        [Authorize]
         public IEnumerable<string> Get()
         {
             var d = _unitOfWork.ProductRepository.GetTopProductsByCost(1);
