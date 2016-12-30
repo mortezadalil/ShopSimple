@@ -1,11 +1,8 @@
-namespace Shop
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Shop.Models.Northwind.Views
+{
     [Table("Category Sales for 1997")]
     public partial class Category_Sales_for_1997
     {

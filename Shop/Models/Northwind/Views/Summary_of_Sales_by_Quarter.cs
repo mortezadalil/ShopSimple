@@ -1,11 +1,9 @@
-namespace Shop
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Shop.Models.Northwind.Views
+{
     [Table("Summary of Sales by Quarter")]
     public partial class Summary_of_Sales_by_Quarter
     {

@@ -1,5 +1,8 @@
 ﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Shop.Models.Northwind;
+using Shop.Models.Northwind.Views;
+
 
 namespace Shop.Models
 {
@@ -7,6 +10,7 @@ namespace Shop.Models
     {
         public ApplicationDbContext() : base("NorthwindIdentity", throwIfV1Schema: false)
         {
+
         }
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<CustomerDemographic> CustomerDemographics { get; set; }
@@ -86,11 +90,11 @@ namespace Shop.Models
                 .WithRequired(e => e.Order)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Shop.Product>()
+            modelBuilder.Entity<Product>()
                 .Property(e => e.UnitPrice)
                 .HasPrecision(19, 4);
 
-            modelBuilder.Entity<Shop.Product>()
+            modelBuilder.Entity<Product>()
                 .HasMany(e => e.Order_Details)
                 .WithRequired(e => e.Product)
                 .WillCascadeOnDelete(false);

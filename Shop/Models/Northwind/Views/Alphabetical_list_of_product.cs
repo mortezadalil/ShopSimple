@@ -1,11 +1,8 @@
-namespace Shop
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Shop.Models.Northwind.Views
+{
     [Table("Alphabetical list of products")]
     public partial class Alphabetical_list_of_product
     {

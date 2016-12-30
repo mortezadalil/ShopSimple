@@ -1,23 +1,27 @@
-﻿using Shop.Repository;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Shop.Models;
 
 namespace Shop.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
-        private readonly IUnitOfWork _unitOfWork;
+       // private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(IUnitOfWork unitOfWork)
+        public HomeController(/*IUnitOfWork unitOfWork*/)
         {
-            _unitOfWork = unitOfWork;
+            // _unitOfWork = unitOfWork;
+    
         }
 
         public ActionResult Index()
         {
-            var d = _unitOfWork.ProductRepository.GetTopProductsByCost(1);
+         //   var d = _unitOfWork.ProductRepository.GetTopProductsByCost(1);
             ViewBag.Title = "Home Page";
-
+            ApplicationDbContext db = new ApplicationDbContext();
+            db.Roles.Add(new IdentityRole() { Name = "admin" });
+            db.SaveChanges();
             return View();
         }
     }

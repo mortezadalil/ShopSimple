@@ -1,27 +1,18 @@
-﻿#region using
+            using System;
 
-using System;
-using System.Threading;
-using System.Threading.Tasks;
-
-#endregion
-
-namespace Shop.Repository
+public interface IUnitOfWork : IDisposable
 {
-    public interface IUnitOfWork : IDisposable
-    {
-        #region Properties
-
-        IProductRepository ProductRepository { get; }
-
-        #endregion
-
-        #region Methods
-
-        int SaveChanges();
-        Task<int> SaveChangesAsync();
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-
-        #endregion
-    }
+    IRegionRepository Regions { get; }
+    ICategoryRepository Categorys { get; }
+    IShipperRepository Shippers { get; }
+    ITerritoryRepository Territorys { get; }
+    IEmployeeRepository Employees { get; }
+    IProductRepository Products { get; }
+    IOrderRepository Orders { get; }
+    ICustomerdemographicRepository Customerdemographics { get; }
+    ICustomerRepository Customers { get; }
+    ISupplierRepository Suppliers { get; }
+    IInvoiceRepository Invoices { get; }
+    IOrderDetailRepository OrderDetails { get; }
+    void Save();
 }

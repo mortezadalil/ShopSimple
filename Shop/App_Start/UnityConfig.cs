@@ -1,7 +1,6 @@
 using Microsoft.Practices.Unity;
 using Shop.Controllers;
-using Shop.Repository;
-using Shop.Services;
+
 using System;
 using System.Web.Http;
 using Unity.WebApi;
@@ -19,8 +18,8 @@ namespace Shop
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            container.RegisterType<IUnitOfWork, UnitOfWork>();
-            container.RegisterType<IProductRepository, ProductRepository>();
+  //          container.RegisterType<IUnitOfWork, UnitOfWork>();
+  //          container.RegisterType<IProductRepository, ProductRepository>();
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
 
@@ -54,8 +53,7 @@ namespace Shop
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
 
-            container.RegisterType<IUnitOfWork, UnitOfWork>();
-            container.RegisterType<IProductRepository, ProductRepository>();
+
 
 
 
