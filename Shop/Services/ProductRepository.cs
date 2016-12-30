@@ -14,7 +14,8 @@ namespace Shop.Services
 
         public List<Product> GetTopProductsByCost(int count)
         {
-            return Set.OrderByDescending(x => x.Cost).Take(count).ToList();
+            return null;
+            //   return Set.OrderByDescending(x => x.Cost).Take(count).ToList();
         }
 
         public Tuple<Product, int, string> Update(Product entity)
