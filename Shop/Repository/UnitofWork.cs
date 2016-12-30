@@ -76,6 +76,16 @@ public sealed class UnitOfWork : IUnitOfWork
         get { return new OrderDetailRepository(_context); }
     }
 
+    public IApplicationuserRepository Applicationusers
+    {
+        get { return new ApplicationuserRepository(_context); }
+    }
+
+    public IApplicationroleRepository Applicationroles
+    {
+        get { return new ApplicationroleRepository(_context); }
+    }
+
     
     public void Save()
     {
@@ -88,7 +98,7 @@ public sealed class UnitOfWork : IUnitOfWork
         GC.SuppressFinalize(this);
     }
 
-    private void Dispose(bool disposing)
+    protected void Dispose(bool disposing)
     {
         if (disposing)
         {

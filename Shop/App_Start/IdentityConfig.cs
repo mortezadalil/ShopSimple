@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -6,6 +7,7 @@ using Microsoft.Owin.Security;
 using Shop.Models;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Shop.Models.Northwind;
 
 namespace Shop
 {
@@ -61,6 +63,21 @@ namespace Shop
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        }
+    }
+    public class AppRoleManager : RoleManager<ApplicationRole>, IDisposable
+    {
+        public AppRoleManager(RoleStore<ApplicationRole> store)
+            : base(store)
+        {
+        }
+
+        public static AppRoleManager Create(
+            IdentityFactoryOptions<AppRoleManager> options,
+            IOwinContext context)
+        {
+            return new AppRoleManager(new
+                RoleStore<ApplicationRole>(context.Get<ApplicationDbContext>()));
         }
     }
 }

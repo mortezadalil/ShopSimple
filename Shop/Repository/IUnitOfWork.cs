@@ -14,5 +14,7 @@ public interface IUnitOfWork : IDisposable
     ISupplierRepository Suppliers { get; }
     IInvoiceRepository Invoices { get; }
     IOrderDetailRepository OrderDetails { get; }
+    IApplicationuserRepository Applicationusers { get; }
+    IApplicationroleRepository Applicationroles { get; }
     void Save();
 }

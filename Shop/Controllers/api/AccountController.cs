@@ -18,6 +18,7 @@ using System.Security.Cryptography;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using Shop.Models.Northwind;
 
 #endregion
 

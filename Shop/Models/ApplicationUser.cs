@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Shop.Models
+namespace Shop.Models.Northwind
 {
     public class ApplicationUser : IdentityUser
     {

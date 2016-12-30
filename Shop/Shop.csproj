@@ -229,6 +229,7 @@
       <DependentUpon>201612301513495_addIdentity.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ApplicationRole.cs" />
     <Compile Include="Models\Northwind\Views\Alphabetical_list_of_product.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -300,6 +301,12 @@
     <Compile Include="Models\Northwind\Views\Summary_of_Sales_by_Year.cs" />
     <Compile Include="Models\Northwind\Supplier.cs" />
     <Compile Include="Models\Northwind\Territory.cs" />
+    <Compile Include="Repository\ApplicationroleRepository.cs">
+      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\ApplicationuserRepository.cs">
+      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repository\CategoryRepository.cs">
       <DependentUpon>RepositoryGenerator.tt</DependentUpon>
     </Compile>
@@ -310,6 +317,12 @@
       <DependentUpon>RepositoryGenerator.tt</DependentUpon>
     </Compile>
     <Compile Include="Repository\EmployeeRepository.cs">
+      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\IApplicationroleRepository.cs">
+      <DependentUpon>RepositoryGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\IApplicationuserRepository.cs">
       <DependentUpon>RepositoryGenerator.tt</DependentUpon>
     </Compile>
     <Compile Include="Repository\ICategoryRepository.cs">
@@ -409,11 +422,11 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Repository\RepositoryGenerator.tt">
+    <None Include="Repository\RepositoryGenerator.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>RepositoryGenerator.cs</LastGenOutput>
-    </Content>
-    <Content Include="Repository\T4Helper.ttinclude" />
+    </None>
+    <None Include="Repository\T4Helper.ttinclude" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Shop.Models.Northwind;
 
 namespace Shop.Controllers
 {
@@ -24,6 +25,7 @@ namespace Shop.Controllers
         {
             UserManager = userManager;
             SignInManager = signInManager;
+            
         }
 
         public ApplicationSignInManager SignInManager
@@ -57,6 +59,7 @@ namespace Shop.Controllers
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
+            
             return View();
         }
 

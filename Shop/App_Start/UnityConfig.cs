@@ -18,8 +18,8 @@ namespace Shop
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
-  //          container.RegisterType<IUnitOfWork, UnitOfWork>();
-  //          container.RegisterType<IProductRepository, ProductRepository>();
+           container.RegisterType<IUnitOfWork, UnitOfWork>();
+           container.RegisterType<IProductRepository, ProductRepository>();
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
 
@@ -51,7 +51,8 @@ namespace Shop
             container.RegisterType<AccountController>(new InjectionConstructor());
             container.RegisterType<ManageController>(new InjectionConstructor());
             // TODO: Register your types here
-            // container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
+            container.RegisterType<IProductRepository, ProductRepository>();
 
 
 

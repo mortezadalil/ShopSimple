@@ -7,6 +7,7 @@ using Owin;
 using Shop.Models;
 using Shop.Providers;
 using System;
+using Shop.Models.Northwind;
 
 namespace Shop
 {
@@ -23,6 +24,8 @@ namespace Shop
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
+          //  app.CreatePerOwinContext<AppRoleManager>(AppRoleManager.Create);
+
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
